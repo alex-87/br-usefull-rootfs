@@ -4,7 +4,7 @@ FROM ubuntu:18.04 AS BUILDER
 RUN apt update && apt upgrade -y
 
 # Install packages
-RUN apt install gcc make cpio git wget perl patch gzip bzip2 unzip rsync file bc -y
+RUN apt install gcc make cpio git wget perl patch gzip bzip2 unzip rsync file bc python -y
 
 #Create directory
 RUN mkdir /opt/br-usefull-fs
