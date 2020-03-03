@@ -4,9 +4,7 @@ FROM ubuntu:18.04 AS BUILDER
 RUN apt update && apt upgrade -y
 
 # Install packages
-RUN apt install make cpio git wget perl patch gzip bzip2 unzip rsync file bc python software-properties-common -y
-RUN add-apt-repository ppa:jonathonf/gcc-9.0 -y && \
-    apt install gcc-9 -y
+RUN apt install make cpio git wget perl patch gzip bzip2 unzip rsync file bc python gcc-9 g++-9 -y
 
 #Create directory
 RUN mkdir /opt/br-usefull-fs
