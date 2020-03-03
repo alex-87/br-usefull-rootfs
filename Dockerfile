@@ -25,5 +25,6 @@ RUN cd /opt/br-usefull-fs/ && \
     rm ${BR_PACKAGE_NAME} && \
     cd "buildroot-${BR_PACKAGE_VERSION}" && \
     make defconfig BR2_DEFONFIG=../defconfig BR2_EXTERNAL=../external && \
+    export FORCE_UNSAFE_CONFIGURE=1 && \
     make
 
