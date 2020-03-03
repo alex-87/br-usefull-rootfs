@@ -11,7 +11,7 @@ RUN mkdir /opt/br-usefull-fs
 
 # Copy configuration files
 COPY defconfig /opt/br-usefull-fs/
-COPY external /opt/br-usefull-fs/
+COPY external /opt/br-usefull-fs/external
 
 # Variables
 ENV BR_PACKAGE_VERSION="2019.02.9"
