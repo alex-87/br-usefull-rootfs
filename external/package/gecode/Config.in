@@ -1,0 +1,7 @@
+config BR2_PACKAGE_GECODE
+	bool "gecode"
+	help
+	  The Gecode Library
+
+	  https://www.gecode.org/
+

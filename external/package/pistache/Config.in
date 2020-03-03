@@ -1,0 +1,7 @@
+config BR2_PACKAGE_PISTACHE
+	bool "pistache"
+	help
+	  The Pitache Library
+
+	  https://github.com/oktal/pistache
+
