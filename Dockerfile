@@ -22,7 +22,7 @@ RUN mkdir /opt/br-usefull-fs/ && \
     cd /opt/br-usefull-fs/ && \
     wget https://buildroot.org/downloads/${BR_PACKAGE_NAME} && \
     tar xaf ${BR_PACKAGE_NAME} && \
-    rm ${BR_PACKAGE_NAME}
+    rm ${BR_PACKAGE_NAME} && \
     cd "buildroot-${BR_PACKAGE_VERSION}" && \
     make defconfig BR2_DEFONFIG=../defconfig BR2_EXTERNAL=../external && \
     make
