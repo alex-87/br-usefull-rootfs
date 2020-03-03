@@ -18,8 +18,7 @@ ENV BR_PACKAGE_VERSION="2019.02.9"
 ENV BR_PACKAGE_NAME="buildroot-${BR_PACKAGE_VERSION}.tar.gz"
 
 # Get BuildRoot
-RUN mkdir /opt/br-usefull-fs/ && \
-    cd /opt/br-usefull-fs/ && \
+RUN cd /opt/br-usefull-fs/ && \
     wget https://buildroot.org/downloads/${BR_PACKAGE_NAME} && \
     tar xaf ${BR_PACKAGE_NAME} && \
     rm ${BR_PACKAGE_NAME} && \
