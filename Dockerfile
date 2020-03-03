@@ -1,7 +1,7 @@
-FROM ubuntu:18.04 AS BUILDER
+FROM ubuntu:19.04 AS BUILDER
 
 # Update
-RUN add-apt-repository ppa:ubuntu-toolchain-r/test
+#RUN add-apt-repository ppa:ubuntu-toolchain-r/test
 RUN apt update && apt upgrade -y
 
 # Install packages
