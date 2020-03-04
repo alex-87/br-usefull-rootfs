@@ -1,7 +1,6 @@
 FROM ubuntu:19.04 AS BUILDER
 
 # Update
-#RUN add-apt-repository ppa:ubuntu-toolchain-r/test
 RUN apt update && apt upgrade -y
 
 # Install packages
@@ -26,5 +25,13 @@ RUN cd /opt/br-usefull-fs/ && \
     cd "buildroot-${BR_PACKAGE_VERSION}" && \
     make defconfig BR2_DEFONFIG=../defconfig BR2_EXTERNAL=../external && \
     export FORCE_UNSAFE_CONFIGURE=1 && \
-    make 1>/dev/null 2>&1 # Disable output
+    mkdir /opt/br-usefull-fs/output && \
+    make O=/opt/br-usefull-fs/output 1>/dev/null 2>&1 # Disable output
+
+
+
+## ## ##
+FROM scratch AS RUNTIME
+
+COPY --from=BUILDER /opt/br-usefull-fs/output/images/rootfs.tar .
 
