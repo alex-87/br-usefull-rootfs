@@ -23,15 +23,17 @@ RUN cd /opt/br-usefull-fs/ && \
     tar xaf ${BR_PACKAGE_NAME} && \
     rm ${BR_PACKAGE_NAME} && \
     cd "buildroot-${BR_PACKAGE_VERSION}" && \
-    make defconfig BR2_DEFONFIG=../defconfig BR2_EXTERNAL=../external O=/opt/br-usefull-fs/output && \
+    make defconfig BR2_DEFONFIG=../defconfig BR2_EXTERNAL=../external && \
     export FORCE_UNSAFE_CONFIGURE=1 && \
-    make source BR2_DEFONFIG=../defconfig BR2_EXTERNAL=../external && \
-    make BR2_DEFONFIG=../defconfig BR2_EXTERNAL=../external 1>/dev/null 2>&1 # Disable output
+    make source && \
+    make 1>/dev/null 2>&1 # Disable output
 
 
 
 ## ## ##
 FROM scratch AS RUNTIME
 
-COPY --from=BUILDER /opt/br-usefull-fs/output/images/rootfs.tar .
+ENV BR_PACKAGE_VERSION="2019.02.9"
+
+COPY --from=BUILDER /opt/br-usefull-fs/buildroot-${BR_PACKAGE_VERSION}/output/images/rootfs.tar .
 
