@@ -4,5 +4,6 @@ services:
   - docker
 
 before_install:
-  - travis_wait 120 docker build -t br-usefull-rootfs .
+  - docker build -t br-usefull-rootfs .
+#  - travis_wait 120 docker build -t br-usefull-rootfs .
 
