@@ -23,7 +23,7 @@ RUN cd /opt/br-usefull-fs/ && \
     tar xaf ${BR_PACKAGE_NAME} && \
     rm ${BR_PACKAGE_NAME} && \
     cd "buildroot-${BR_PACKAGE_VERSION}" && \
-    make defconfig BR2_DEFONFIG=../defconfig BR2_EXTERNAL=../external && \
+    make defconfig BR2_DEFONFIG=../defconfig BR2_EXTERNAL=../external O=/opt/br-usefull-fs/output && \
     export FORCE_UNSAFE_CONFIGURE=1 && \
     make source BR2_DEFONFIG=../defconfig BR2_EXTERNAL=../external && \
     make BR2_DEFONFIG=../defconfig BR2_EXTERNAL=../external # Disable output
