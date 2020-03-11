@@ -10,6 +10,5 @@ NJSON_SITE = $(call github,nlohmann,json,v$(NJSON_VERSION))
 NJSON_LICENSE = MIT
 NJSON_LICENSE_FILE = LICENSE
 
-$(eval $(host-cmake-package))
 $(eval $(cmake-package))
-
+$(eval $(host-cmake-package))
