@@ -1,0 +1,7 @@
+config BR2_PACKAGE_NJSON
+        bool "lohmannjson"
+        help
+          JSon for modern C++
+
+          https://github.com/nlohmann/json
+

@@ -1,2 +1,3 @@
 source "$BR2_EXTERNAL_USEFULLROOTFS_PATH/package/gecode/Config.in"
 source "$BR2_EXTERNAL_USEFULLROOTFS_PATH/package/pistache/Config.in"
+source "$BR2_EXTERNAL_USEFULLROOTFS_PATH/package/nlohmannjson/Config.in"
