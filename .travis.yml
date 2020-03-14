@@ -15,7 +15,7 @@ before_install:
 
 before_deploy:
   - echo "$REG_DCKR_PWD" | docker login -u "$REG_DCKR_USER" --password-stdin ${REGISTRY_NAME}
-  - docker tag ${IMAGE_NAME} ${IMAGE_NAME}:latest
+  - docker tag ${IMAGE_NAME} ${REGISTRY_NAME}/${IMAGE_NAME}:latest
 
 deploy:
   provider: script
