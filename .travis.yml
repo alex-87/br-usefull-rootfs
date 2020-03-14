@@ -1,8 +1,26 @@
 language: minimal
 
+env:
+  global:
+    - IMAGE_NAME=usefull-rootfs
+    - REGISTRY_URL=docker.pkg.github.com
+    - REGISTRY_NAME=${REGISTRY_URL}/alex-87/br-usefull-rootfs
+
 services:
   - docker
 
 before_install:
-  - travis_wait 120 docker build -t br-usefull-rootfs .
+  - travis_wait 120 docker build -t ${IMAGE_NAME} .
+
+
+before_deploy:
+  - echo "$REG_DCKR_PWD" | docker login -u "$REG_DCKR_USER" --password-stdin ${REGISTRY_NAME}
+  - docker tag ${IMAGE_NAME} ${IMAGE_NAME}:latest
+
+deploy:
+  provider: script
+  script:
+    - docker push ${REGISTRY_NAME}/${IMAGE_NAME}:latest
+  on:
+    branch: master
 
