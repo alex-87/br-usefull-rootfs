@@ -26,6 +26,7 @@ RUN cd /opt/br-usefull-fs/ && \
     make defconfig BR2_DEFONFIG=../defconfig BR2_EXTERNAL=../external && \
     export FORCE_UNSAFE_CONFIGURE=1 && \
     make source BR2_DEFONFIG=../defconfig BR2_EXTERNAL=../external && \
+    make legal-info BR2_DEFONFIG=../defconfig BR2_EXTERNAL=../external && \
     make 1>/dev/null 2>&1 # Disable output
 
 
@@ -36,4 +37,11 @@ FROM scratch AS RUNTIME
 ENV BR_PACKAGE_VERSION="2019.02.9"
 
 COPY --from=BUILDER /opt/br-usefull-fs/buildroot-${BR_PACKAGE_VERSION}/output/images/rootfs.tar .
+
+## Copying licenses files
+RUN mkdir /legal-info
+COPY --from=BUILDER /opt/br-usefull-fs/buildroot-${BR_PACKAGE_VERSION}/output/legal-info/host-licenses /legal-info/host-licenses
+COPY --from=BUILDER /opt/br-usefull-fs/buildroot-${BR_PACKAGE_VERSION}/output/legal-info/licenses /legal-info/licenses
+COPY --from=BUILDER /opt/br-usefull-fs/buildroot-${BR_PACKAGE_VERSION}/output/legal-info/host-sources /legal-info/host-sources
+COPY --from=BUILDER /opt/br-usefull-fs/buildroot-${BR_PACKAGE_VERSION}/output/legal-info/sources /legal-info/sources
 

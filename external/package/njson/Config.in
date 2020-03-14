@@ -1,5 +1,5 @@
 config BR2_PACKAGE_NJSON
-        bool "lohmannjson"
+        bool "njson"
         help
           JSon for modern C++
 
