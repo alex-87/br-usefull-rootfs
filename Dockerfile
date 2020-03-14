@@ -39,9 +39,8 @@ ENV BR_PACKAGE_VERSION="2019.02.9"
 COPY --from=BUILDER /opt/br-usefull-fs/buildroot-${BR_PACKAGE_VERSION}/output/images/rootfs.tar .
 
 ## Copying licenses files
-RUN mkdir /legal-info
-COPY --from=BUILDER /opt/br-usefull-fs/buildroot-${BR_PACKAGE_VERSION}/output/legal-info/host-licenses /legal-info/host-licenses
-COPY --from=BUILDER /opt/br-usefull-fs/buildroot-${BR_PACKAGE_VERSION}/output/legal-info/licenses /legal-info/licenses
-COPY --from=BUILDER /opt/br-usefull-fs/buildroot-${BR_PACKAGE_VERSION}/output/legal-info/host-sources /legal-info/host-sources
-COPY --from=BUILDER /opt/br-usefull-fs/buildroot-${BR_PACKAGE_VERSION}/output/legal-info/sources /legal-info/sources
+COPY --from=BUILDER /opt/br-usefull-fs/buildroot-${BR_PACKAGE_VERSION}/output/legal-info/host-licenses /host-licenses
+COPY --from=BUILDER /opt/br-usefull-fs/buildroot-${BR_PACKAGE_VERSION}/output/legal-info/licenses /licenses
+COPY --from=BUILDER /opt/br-usefull-fs/buildroot-${BR_PACKAGE_VERSION}/output/legal-info/host-sources /host-sources
+COPY --from=BUILDER /opt/br-usefull-fs/buildroot-${BR_PACKAGE_VERSION}/output/legal-info/sources /sources
 
