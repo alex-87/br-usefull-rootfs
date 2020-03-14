@@ -1,0 +1,7 @@
+config BR2_PACKAGE_CPPPEGLIB
+	bool "cpppeglib"
+	help
+	  Parsing Expression Grammars Library
+
+	  https://github.com/yhirose/cpp-peglib
+
