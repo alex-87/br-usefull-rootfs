@@ -15,6 +15,9 @@ GECODE_INSTALL_TARGET = YES
 
 GECODE_CONF_OPTS = --disable-qt --disable-gist --disable-flatzinc --disable-examples
 
+HOST_GECODE_DEPENDENCIES = mpfr
+GECODE_DEPENDENCIES = mpfr
+
 $(eval $(autotools-package))
 $(eval $(host-autotools-package))
 

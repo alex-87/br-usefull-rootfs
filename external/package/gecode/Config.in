@@ -1,5 +1,6 @@
 config BR2_PACKAGE_GECODE
 	bool "gecode"
+	select BR2_PACKAGE_MPFR
 	help
 	  The Gecode Library
 
