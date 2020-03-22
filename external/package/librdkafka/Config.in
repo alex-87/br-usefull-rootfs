@@ -1,0 +1,7 @@
+config BR2_PACKAGE_LIBRDKAFKA
+	bool "librdkafka"
+	help
+	  The Apache Kafka C/C++ client library
+
+	  https://github.com/edenhill/librdkafka
+

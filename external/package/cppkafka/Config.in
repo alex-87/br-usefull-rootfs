@@ -1,0 +1,8 @@
+config BR2_PACKAGE_CPPKAFKA
+	bool "cppkafka"
+	select BR2_PACKAGE_LIBRDKAFKA
+	help
+	  High level C++ wrapper for rdkafka
+
+	  https://github.com/mfontanini/cppkafka
+
