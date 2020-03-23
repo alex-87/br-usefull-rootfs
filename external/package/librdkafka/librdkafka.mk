@@ -12,6 +12,8 @@ LIBRDKAFKA_INSTALL_TARGET = YES
 
 LIBRDKAFKA_LICENSE_FILES = LICENSE
 
-$(eval $(autotools-package))
-$(eval $(host-autotools-package))
+HOST_LIBRDKAFKA_DEPENDENCIES = boost
+
+$(eval $(cmake-package))
+$(eval $(host-cmake-package))
 
