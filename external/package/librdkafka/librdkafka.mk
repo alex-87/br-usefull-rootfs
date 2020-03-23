@@ -13,6 +13,7 @@ LIBRDKAFKA_INSTALL_TARGET = YES
 LIBRDKAFKA_LICENSE_FILES = LICENSE
 
 HOST_LIBRDKAFKA_DEPENDENCIES = boost
+LIBRDKAFKA_DEPENDENCIES = boost
 
 $(eval $(cmake-package))
 $(eval $(host-cmake-package))
